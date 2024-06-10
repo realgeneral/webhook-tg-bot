@@ -7,7 +7,7 @@ from loader import config
 # Параметры для инициализации (directive -> param -> value)
 params = {
     'default': {
-        'token': 'ТОКЕН',
+        'token': '6403780572:AAGz43fjxC8oBcr2OVOqagjx6BaRS1x8psQ',
         'debug': False,
         'datetime_mask': '%%Y-%%m-%%d %%H:%%M',
         'unlimited': False,
