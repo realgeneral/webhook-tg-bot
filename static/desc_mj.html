@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+<head>
+  <title>Разбираемся с Midjourney: кнопки, команды и интересные фишки</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type="text/css">
+    @font-face {
+        font-family: 'Helvetica';
+        src: url('https://zverev.io/static/fonts/Helvetica.eot');
+        src: local('Helvetica'),
+            url('https://zverev.io/static/fonts/Helvetica.eot?#iefix') format('embedded-opentype'),
+            url('https://zverev.io/static/fonts/Helvetica.woff2') format('woff2'),
+            url('https://zverev.io/static/fonts/Helvetica.woff') format('woff'),
+            url('https://zverev.io/static/fonts/Helvetica.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica';
+        src: url('https://zverev.io/static/fonts/Helvetica-Oblique.eot');
+        src: local('Helvetica Oblique'), local('Helvetica-Oblique'),
+            url('https://zverev.io/static/fonts/Helvetica-Oblique.eot?#iefix') format('embedded-opentype'),
+            url('https://zverev.io/static/fonts/Helvetica-Oblique.woff2') format('woff2'),
+            url('https://zverev.io/static/fonts/Helvetica-Oblique.woff') format('woff'),
+            url('https://zverev.io/static/fonts/Helvetica-Oblique.ttf') format('truetype');
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica';
+        src: url('https://zverev.io/static/fonts/Helvetica-BoldOblique.eot');
+        src: local('Helvetica Bold Oblique'), local('Helvetica-BoldOblique'),
+            url('https://zverev.io/static/fonts/Helvetica-BoldOblique.eot?#iefix') format('embedded-opentype'),
+            url('https://zverev.io/static/fonts/Helvetica-BoldOblique.woff2') format('woff2'),
+            url('https://zverev.io/static/fonts/Helvetica-BoldOblique.woff') format('woff'),
+            url('https://zverev.io/static/fonts/Helvetica-BoldOblique.ttf') format('truetype');
+        font-weight: bold;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica';
+        src: url('https://zverev.io/static/fonts/Helvetica-Light.eot');
+        src: local('Helvetica Light'), local('Helvetica-Light'),
+            url('https://zverev.io/static/fonts/Helvetica-Light.eot?#iefix') format('embedded-opentype'),
+            url('https://zverev.io/static/fonts/Helvetica-Light.woff2') format('woff2'),
+            url('https://zverev.io/static/fonts/Helvetica-Light.woff') format('woff'),
+            url('https://zverev.io/static/fonts/Helvetica-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica';
+        src: url('https://zverev.io/static/fonts/Helvetica-Bold.eot');
+        src: local('Helvetica Bold'), local('Helvetica-Bold'),
+            url('https://zverev.io/static/fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+            url('https://zverev.io/static/fonts/Helvetica-Bold.woff2') format('woff2'),
+            url('https://zverev.io/static/fonts/Helvetica-Bold.woff') format('woff'),
+            url('https://zverev.io/static/fonts/Helvetica-Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Helvetica';
+        src: url('https://zverev.io/static/fonts/Helvetica-LightOblique.eot');
+        src: local('Helvetica Light Oblique'), local('Helvetica-LightOblique'),
+            url('https://zverev.io/static/fonts/Helvetica-LightOblique.eot?#iefix') format('embedded-opentype'),
+            url('https://zverev.io/static/fonts/Helvetica-LightOblique.woff2') format('woff2'),
+            url('https://zverev.io/static/fonts/Helvetica-LightOblique.woff') format('woff'),
+            url('https://zverev.io/static/fonts/Helvetica-LightOblique.ttf') format('truetype');
+        font-weight: 300;
+        font-style: italic;
+        font-display: swap;
+    }
+    :root {
+      --main-indent: 20px;
+      --main-ident-block: 40px;
+      --header-ident-top-padding: 15px;
+
+      --link-color: #0099ff;
+      --link-hover-color: #b03000;
+
+      --main-block-description-ident: 5px;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      color: #ffffff;
+      font-family: 'Helvetica';
+      font-weight: 500;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      background: #18222D;
+    }
+
+    a:visited,
+    a:link {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:visited span.dotted:hover::after,
+    a:visited span.dotted:hover::after,
+    a:visited span.solid:hover::after,
+    a:link span.solid:hover::after {
+      border-color: var(--link-hover-color);
+    }
+
+    a:visited span.dotted:hover,
+    a:visited span.dotted:hover,
+    a:visited span.solid:hover,
+    a:link span.solid:hover {
+      color: var(--link-hover-color);
+    }
+
+    a:visited span.solid::after,
+    a:link span.solid::after {
+      content: "";
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid var(--link-color);
+    }
+
+    a:visited span.dotted::after,
+    a:link span.dotted::after {
+      content: "";
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px dotted var(--link-color);
+    }
+
+    a:visited span.solid,
+    a:link span.solid,
+    a:visited span.dotted,
+    a:link span.dotted {
+      position: relative;
+    }
+
+    .flex {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .flex.column {
+      flex-direction: column;
+    }
+
+    .flex.row {
+      flex-direction: row;
+    }
+    .container {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      font-weight: bold;
+      padding-top: 30px;
+    }
+    header h1 {
+      font-size: 38px;
+    }
+    header .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 15px 0;
+    }
+    header .navigation a {
+      background: #192430;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+      border-radius: 24px;
+      font-size: 14px;
+      color: #FFFFFF;
+      text-align: center;
+      font-weight: 400;
+      height: 33px;
+      line-height: 33px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    header .navigation a:hover {
+       box-shadow: 0 0 0 0 rgba(0,0,0,0.50);
+    }
+
+    .content {
+      background: #213040;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+
+    .content_header {
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      padding: 11px 0;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #17222D;
+    }
+
+    .shadow_block {
+      background: #18222D;
+      padding: 10px 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .buttons .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .buttons .row a{
+      text-align: center;
+      background: #213040;
+      border-radius: 5px;
+      width: 100%;
+      height: 34px;
+      line-height: 34px;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .content img {
+      width: 100%;
+    }
+
+    .content p {
+      padding: 0 11px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+        <h1>🌆<br>Midjourney<br>вводный гайд</h1>
+        <nav class="navigation">
+            <a href="#btns">Кнопки</a>
+            <a href="#cmds">Команды</a>
+            <a href="#extra">Фишки</a>
+        </nav>
+    </header>
+    <div class="content">
+      <div class="content_header">📖 Введение</div>
+      <p>🧐 Наверняка вы уже в курсе, что вы можете создавать изображения в нашем боте просто присылая ему текстовый запрос, картинку с запросом или загружать от 2 до 5 картинок и смешивать их, бот поймёт вас в каждом из этих случаев, дополнительно переключать ничего не требуется.</p>
+      <p>&nbsp;</p>
+      <p>🏃‍♀️И раз вы это знаете, давайте быстренько пробежимся по двум кнопкам на главной.</p>
+      <p>&nbsp;</p>
+      <p><i>🙏 Это первая версия руководства, в ближайшее время мы заполним его  примерами для каждой команды и каждого описанного действия. Спасибо за понимание!</i></p>
+      <div class="shadow_block">
+        <div class="buttons">
+          <div class="row">
+              <a href="#">🔢 Изменить версию</a>
+              <a href="#">📐 Изменить формат</a>
+          </div>
+        </div>
+      </div>
+      <p><b>«🔢 Изменить версию»</b> — как бы банально не звучало, меняет версию. И если вы явно не задаёте её параметром <b>--v</b>, то бот подставляет его автоматически.</p>
+      <p>&nbsp;</p>
+      <p><b>«📐 Изменить формат»</b> — меняет формат изображения подставляя команду <b>--ar 1:1</b>.</p>
+      <p>Нажмите на эту кнопку в меню бота и вы узнаете о всех доступных форматах с примерами изображений. Если вы не нашли нужного формата, вы всегда можете воспользоваться командой <b>--ar</b> и указать свой.</p>
+      <p>&nbsp;</p>
+    </div>
+    <br>
+    <div class="content" id="btns">
+      <div class="content_header">🎉 Первая генерация</div>
+      <p>Вне зависимости, смешивали ли вы изображения, создавали фото на основе примеров — вы получите 1 изображение на котором будет расположено 4 картинки, а снизу будет 9 на первый взгляд непонятных кнопок.  </p>
+      <p>&nbsp;</p>
+      <p><b>U1, U2, U3, U4</b> — это увеличение одного из фото (апскейл);</p>
+      <p>&nbsp;</p>
+      <p><b>V1, V2, V3, V4</b> — — создают альтернативные 4 изображения на основе выбранного фото;</p>
+      <p>&nbsp;</p>
+      <p>🔄 — пересоздаёт изображение.</p>
+      <p>&nbsp;</p>
+      <img src="https://zverev.io/media/images/uv1234.original.jpg">
+      <p>&nbsp;</p>
+      <p>После выборра <b>U1, U2, U3, U4</b> бот присылает вам увеличенное фото, его оригинал и предлагает проделать с ним несколько новых и интересных манипуляций с помощью кнопок ниже.</p>
+      <p>&nbsp;</p>
+      <p><b>Upscale (Subtle)</b> — увеличивает ваше изображение до 2048x2048px в исходном виде.</p>
+      <p>&nbsp;</p>
+      <p><b>Upscale (Creative)</b> —  увеличивает ваше изображение до 2048x2048px с более креативными изменениями (добавляет чуть больше деталей и улучшает то, что было).</p>
+      <p>&nbsp;</p>
+      <p><b>Vary (Low)</b> — создаёт вариацию из 4 картинок (как выше) с незначительными изменениями.</p>
+      <p>&nbsp;</p>
+      <p><b>Vary (High)</b> — создаёт вариацию из 4 картинок с значительными изменениями.</p>
+      <p>&nbsp;</p>
+      <p><b>Zoom Out (2x, 1.5, custom)</b> — отдаляет и увеличивает фон по краям изображения.</p>
+      <p>&nbsp;</p>
+      <p><b>Стрелки (⬅️, ➡️, ⬆️, ⬇️)</b> — создают изображение с продолжением в выбранную сторону.</p>
+      <p>&nbsp;</p>
+    </div>
+    <br>
+    <div class="content" id="cmds">
+      <div class="content_header">🔢 Команды</div>
+      <p><b>Команды</b> помогут вам экспериментировать с генерацией вашего изображения. Улучшать его, привязывать персонажей или добавлять непредсказуемости.</p>
+      <p>&nbsp;</p>
+      <p>Команды всегда пишутся после вашего запроса. Например: <b><i>«beaver walking in the street --niji --v 6»</i></b></p>
+      <p>&nbsp;</p>
+      <p><b>--v 6 / --version 6</b> — позволяет выбрать версию Midjourney. По-умолчанию бот генерирует в 6 версии;</p>
+      <p>&nbsp;</p>
+      <p><b>--ar 1:1</b> — изменяет пропорции генерируемого изображения. По-умолчанию бот генерирует в 6 версии;</p>
+      <p>&nbsp;</p>
+      <p><b>--niji</b> — создаёт аниме-изображение на основе вашего запроса;</p>
+      <p>&nbsp;</p>
+      <p><b>--no текст</b> — позволяют исключить из генерируемого изображения объекты, которые вы опишите. Например: <b><i>«beaver walking in the street --no carrot, water»</i></b>;</p>
+      <p>&nbsp;</p>
+      <p><b>--cref ссылка</b> — укажите команду и ссылку на изображение, у которой хотите заимствовать внешний вид генерирумого персонажа. <i>В разделе «Фишки» есть интересное использование этой команды.</i></p>
+      <p>&nbsp;</p>
+      <p><b>--cw <i>от 1 до 100</i></b> — определит степень выраженности оригинальных черт персонажа, где более высокое значение приведет к более выраженным чертам. <b>Используется с командой <i>--cref</i></b></p>
+      <p>&nbsp;</p>
+      <p><b>--sref ссылка</b> — укажите команду и ссылку на изображение, у которой хотите заимствовать стиль. <i>В разделе «Фишки» есть интересное использование этой команды.</i></p>
+      <p>&nbsp;</p>
+      <p><b>--sw <i>от 1 до 1000</i></b> — пределяет, насколько сильно будет выражен первоначальный стиль. Чем выше это число, тем более заметными будут черты этого стиля.</i> <b>Используется с командой <i>--sref</i></b></p>
+      <p>&nbsp;</p>
+
+      <p><i>ℹ️ Совсем не страшно, если телеграм заменил два тире (--v) на дефис (—v). Наш бот это поймёт и зачтёт вашу команду.</i></b></p>
+      <p>&nbsp;</p>
+    </div>
+    <br>
+    <div class="content" id="extra">
+      <div class="content_header">🥰 Фишки</div>
+      <p>Если вы используете команду --sref / --cref, но не знаете какую ссылку указать, то вы можете просто прикрепить фото и указать одну из этих команд.</p>
+      <p>&nbsp;</p>
+      <p>Бот автоматически подставит ссылку. Например: <b><i>«piano --cref» + фото (в одном сообщении)</i></b>.</p>
+      <p>&nbsp;</p>
+    </div>
+    <footer>
+      Спасибо, что Вы с нами!
+    </footer>
+  </div>
+</body>
+</html>

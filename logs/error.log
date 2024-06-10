@@ -1,0 +1,149 @@
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717597]
+INFO:     Started server process [717665]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+language.py [LINE:46] #WARNING  [2024-05-14 21:03:49,528]  Команды для языка 🇷🇺 Русский обновлены
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+language.py [LINE:46] #WARNING  [2024-05-14 21:03:49,580]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717665]
+language.py [LINE:46] #WARNING  [2024-05-14 21:08:01,261]  Команды для языка 🇷🇺 Русский обновлены
+language.py [LINE:46] #WARNING  [2024-05-14 21:08:01,412]  Команды для языка 🇺🇸🇺 English обновлены
+base_events.py [LINE:1758] #ERROR    [2024-05-14 21:09:05,634]  Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f2b14b596f0>
+INFO:     Started server process [717694]
+INFO:     Waiting for application startup.
+language.py [LINE:46] #WARNING  [2024-05-14 21:09:15,746]  Команды для языка 🇷🇺 Русский обновлены
+ERROR:    Traceback (most recent call last):
+  File "/var/projects/PremiumAiBot/env/lib/python3.10/site-packages/starlette/routing.py", line 705, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/var/projects/PremiumAiBot/env/lib/python3.10/site-packages/starlette/routing.py", line 584, in __aenter__
+    await self._router.startup()
+  File "/var/projects/PremiumAiBot/env/lib/python3.10/site-packages/starlette/routing.py", line 682, in startup
+    await handler()
+  File "/var/projects/PremiumAiBot/webhook.py", line 163, in startup
+    if not await bot.set_webhook(
+  File "/var/projects/PremiumAiBot/env/lib/python3.10/site-packages/telebot/async_telebot.py", line 2047, in set_webhook
+    return await asyncio_helper.set_webhook(self.token, url, certificate, max_connections, allowed_updates, ip_address,
+  File "/var/projects/PremiumAiBot/env/lib/python3.10/site-packages/telebot/asyncio_helper.py", line 216, in set_webhook
+    return await _process_request(token, method_url, params=payload, files=files)
+  File "/var/projects/PremiumAiBot/env/lib/python3.10/site-packages/telebot/asyncio_helper.py", line 99, in _process_request
+    raise e
+  File "/var/projects/PremiumAiBot/env/lib/python3.10/site-packages/telebot/asyncio_helper.py", line 95, in _process_request
+    json_result = await _check_result(url, resp)
+  File "/var/projects/PremiumAiBot/env/lib/python3.10/site-packages/telebot/asyncio_helper.py", line 274, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.asyncio_helper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: bad webhook: Webhook can be set up only on ports 80, 88, 443 or 8443
+
+ERROR:    Application startup failed. Exiting.
+INFO:     Started server process [717720]
+INFO:     Waiting for application startup.
+language.py [LINE:46] #WARNING  [2024-05-14 21:11:49,191]  Команды для языка 🇷🇺 Русский обновлены
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+language.py [LINE:46] #WARNING  [2024-05-14 21:11:49,251]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717720]
+INFO:     Started server process [717739]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+language.py [LINE:46] #WARNING  [2024-05-14 21:13:37,316]  Команды для языка 🇷🇺 Русский обновлены
+language.py [LINE:46] #WARNING  [2024-05-14 21:13:37,368]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717739]
+INFO:     Started server process [717749]
+INFO:     Waiting for application startup.
+language.py [LINE:46] #WARNING  [2024-05-14 21:14:53,500]  Команды для языка 🇷🇺 Русский обновлены
+language.py [LINE:46] #WARNING  [2024-05-14 21:14:53,584]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717749]
+INFO:     Started server process [717776]
+INFO:     Waiting for application startup.
+language.py [LINE:46] #WARNING  [2024-05-14 21:19:23,781]  Команды для языка 🇷🇺 Русский обновлены
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+language.py [LINE:46] #WARNING  [2024-05-14 21:19:23,906]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717776]
+INFO:     Started server process [717799]
+INFO:     Waiting for application startup.
+language.py [LINE:46] #WARNING  [2024-05-14 21:23:57,118]  Команды для языка 🇷🇺 Русский обновлены
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+language.py [LINE:46] #WARNING  [2024-05-14 21:23:57,222]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717799]
+INFO:     Started server process [717837]
+INFO:     Waiting for application startup.
+language.py [LINE:46] #WARNING  [2024-05-14 21:28:18,920]  Команды для языка 🇷🇺 Русский обновлены
+language.py [LINE:46] #WARNING  [2024-05-14 21:28:18,980]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717837]
+INFO:     Started server process [717894]
+INFO:     Waiting for application startup.
+language.py [LINE:46] #WARNING  [2024-05-14 21:36:37,462]  Команды для языка 🇷🇺 Русский обновлены
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+language.py [LINE:46] #WARNING  [2024-05-14 21:36:37,576]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717894]
+INFO:     Started server process [717975]
+INFO:     Waiting for application startup.
+language.py [LINE:46] #WARNING  [2024-05-14 21:50:05,781]  Команды для языка 🇷🇺 Русский обновлены
+language.py [LINE:46] #WARNING  [2024-05-14 21:50:05,840]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717975]
+INFO:     Started server process [717986]
+INFO:     Waiting for application startup.
+language.py [LINE:46] #WARNING  [2024-05-14 21:50:57,879]  Команды для языка 🇷🇺 Русский обновлены
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+language.py [LINE:46] #WARNING  [2024-05-14 21:50:57,989]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [717986]
+INFO:     Started server process [718007]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+language.py [LINE:46] #WARNING  [2024-05-14 21:53:48,983]  Команды для языка 🇷🇺 Русский обновлены
+language.py [LINE:46] #WARNING  [2024-05-14 21:53:49,124]  Команды для языка 🇺🇸🇺 English обновлены
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [718007]
+INFO:     Started server process [718034]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+language.py [LINE:46] #WARNING  [2024-05-14 21:58:39,361]  Команды для языка 🇷🇺 Русский обновлены
+language.py [LINE:46] #WARNING  [2024-05-14 21:58:39,520]  Команды для языка 🇺🇸🇺 English обновлены
